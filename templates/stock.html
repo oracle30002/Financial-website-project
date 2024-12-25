@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block content %}
+<!--action代表要將form提交到哪裡-->
+<form method="post" action="http://127.0.0.1:5000/stock">
+  <div class="mb-3">
+    <label for="stock-id" class="form-label">股票代號</label>
+    <input
+      type="text"
+      class="form-control"
+      id="stock-id" 
+      name="stock-id" 
+      />
+  </div>
+
+  <div class="mb-3">
+    <label for="stock-num" class="form-label">成交股數</label>
+    <input
+      type="number"
+      class="form-control"
+      id="stock-num" 
+      name="stock-num" 
+      />
+  </div>
+
+  <div class="mb-3">
+    <label for="stock-price" class="form-label">成交單價</label>
+    <input
+      step="0.01"
+      type="number"
+      class="form-control"
+      id="stock-price" 
+      name="stock-price" 
+      />
+  </div>
+
+  <div class="mb-3">
+    <label for="processing-fee" class="form-label">手續費</label>
+    <input
+      type="number"
+      class="form-control"
+      id="processing-fee" 
+      name="processing-fee" 
+      />
+  </div>
+
+  <div class="mb-3">
+    <label for="tax" class="form-label">交易稅</label>
+    <input
+      type="number"
+      class="form-control"
+      id="tax" 
+      name="tax" 
+      />
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label">日期</label>
+    <input
+      type="date"
+      class="form-control"
+      id="date" 
+      name="date" 
+      />
+  </div>
+
+    <!--最後在頁面設置一個submit button，class設置要按照boostrap設置-->
+  <button type="submit" class="btn btn-primary">提交表單</button>
+</form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block content %}
+<!--action代表要將form提交到哪裡-->
+<form method="post" action="http://127.0.0.1:5000/cash">
+  <div class="mb-3">
+    <label for="taiwanese-dollars" class="form-label">台幣</label>
+    <input
+      type="number"
+      class="form-control"
+      id="taiwanese-dollars" 
+      name="taiwanese-dollars" 
+      />
+      <!--name的功用是當form的表單傳到後端，會根據name去形成一個key value pair,
+      這個key就是name所設定的string，value的部分就是input標籤內的number。
+      -->
+  </div>
+
+  <div class="mb-3">
+    <label for="us-dollars" class="form-label">美金</label>
+    <input
+      stpe="0.01"
+      type="number"
+      class="form-control"
+      id="us-dollars" 
+      name="us-dollars" 
+      />
+      <!--設置step參數為0.01當使用表格的增減按鈕時，是以0.01為單位增減(預設為1)
+      -->
+  </div>
+
+  <div class="mb-3">
+    <label for="note" class="form-label">備註</label>
+    <input
+      type="text"
+      class="form-control"
+      id="note" 
+      name="note" 
+      />
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label">日期</label>
+    <input
+      type="date"
+      class="form-control"
+      id="date" 
+      name="date" 
+      />
+  </div>
+
+    <!--最後在頁面設置一個submit button，class設置要按照boostrap設置-->
+  <button type="submit" class="btn btn-primary">提交表單</button>
+</form>
+{% endblock %}
